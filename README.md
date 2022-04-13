@@ -1,5 +1,5 @@
 # ut-kafka
-UT framework extension:RDKafka.
+UT framework extension:Kafka.
 
 composer require usualtool/ut-kafka
 
