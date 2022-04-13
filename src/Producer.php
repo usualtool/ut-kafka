@@ -9,8 +9,8 @@ class Producer{
         $conf = new \RdKafka\Conf();
         $conf->set("metadata.broker.list",$this->host);
         $producer = new \RdKafka\Producer($conf);
-        $topic = $producer->newTopic($this->topic);
-        $topic->produce(RD_KAFKA_PARTITION_UA,0,$message);
+        $topics = $producer->newTopic($this->topic);
+        $topics->produce(RD_KAFKA_PARTITION_UA,0,$message);
         $producer->poll(0);
     }
 }
