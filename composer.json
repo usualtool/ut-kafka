@@ -1,6 +1,6 @@
 {
     "name":             "usualtool/ut-kafka",
-    "description":      "UT framework extension:Kafka.",
+    "description":      "UT Framework Extension:Kafka.",
     "keywords":         ["ut-kafka", "usualtool", "UT Framework"],
     "homepage":         "https://github.com/usualtool",
     "license": "Apache-2.0",
