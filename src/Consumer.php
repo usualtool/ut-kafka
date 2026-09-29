@@ -1,9 +1,9 @@
 <?php
 namespace usualtool\Kafka;
-use library\UsualToolMysql;
-use library\UsualToolMssql;
-use library\UsualToolPgsql;
-use library\UsualToolSqlite;
+use usualtool\Lib\Mysql;
+use usualtool\Lib\Mssql;
+use usualtool\Lib\Pgsql;
+use usualtool\Lib\Sqlite;
 class Consumer{
     public function __construct($host='127.0.0.1:9020',$topic='ut-test'){
         $this->host = $host;
@@ -30,13 +30,13 @@ class Consumer{
                         $data=json_decode($message,true);
                         if(array_key_exists('data',$data) && array_key_exists('sql',$data)):
                             if($data["data"]=="mysql"):
-                                UsualToolMysql\UTMysql::RunSql($data["sql"]);
+                                Mysql::RunSql($data["sql"]);
                             elseif($data["data"]=="mssql"):
-                                UsualToolMysql\UTMssql::RunSql($data["sql"]);
+                                Mssql::RunSql($data["sql"]);
                             elseif($data["data"]=="pgsql"):
-                                UsualToolMysql\UTPgsql::RunSql($data["sql"]);
+                                Pgsql::RunSql($data["sql"]);
                             elseif($data["data"]=="sqlite"):
-                                UsualToolMysql\UTSqlite::RunSql($data["sql"]);
+                                Sqlite::RunSql($data["sql"]);
                             endif;
                         endif;
                     else:
